@@ -35,3 +35,10 @@
     font-weight: 400;
   }
   
+  @mixin mobile-button-text {
+    font-family: $base-font;
+    color: $color-primary-light;
+    font-size: 0.8rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+  }

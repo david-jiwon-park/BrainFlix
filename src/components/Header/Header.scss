@@ -51,4 +51,28 @@
         object-position: 20% 50%;
     }
 
+    &__button-container {
+        width: 100%;
+        position: relative;
+    }
+
+    &__button {
+        width: 100%;
+        background-color: $color-primary-cta;
+        height: 2.5rem;
+        border-radius: 4px;
+        border: none;
+        @include mobile-button-text;
+        &:hover {
+            background-color: $color-cta-hover;
+        }
+    }
+    
+    &__upload-icon {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.6rem;
+    }
 }
+
+
