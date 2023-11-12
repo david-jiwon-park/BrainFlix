@@ -26,6 +26,14 @@
     border-radius: 50%;
   }
 
+  /* Divider */
+  @mixin divider {
+    border-bottom: 0.125rem solid $color-divider-and-outline;
+  }
+
+
+
+
   /* Text Style for Text Entered in Form Fields */
 @mixin field-text {
     font-family: $base-font;
@@ -35,6 +43,9 @@
     font-weight: 400;
   }
   
+
+
+
   @mixin mobile-button-text {
     font-family: $base-font;
     color: $color-primary-light;

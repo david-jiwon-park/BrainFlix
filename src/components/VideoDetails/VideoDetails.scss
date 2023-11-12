@@ -1,0 +1,44 @@
+// Video Details Styling 
+
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+
+.video-details {
+    padding: 1rem;
+    
+    &__data {
+        display: flex;
+        padding: 1rem 0;
+        @include divider;
+        &--left {
+            width: 50%;
+        }
+    }
+
+    &__channel {
+        padding-bottom: 1rem;
+    }
+
+    &__views {
+        display: flex;
+        padding-bottom: 1rem;
+    }
+
+    &__icon {
+        padding-right: 0.5rem;
+    }
+
+    &__likes {
+        display: flex;
+    }
+
+    &__title {
+        padding-bottom: 1rem;
+        @include divider;
+    }
+
+    &__description {
+        padding-top: 1rem
+    }
+}
