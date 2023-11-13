@@ -22,7 +22,7 @@ function Header() {
                     />
                     <img className="header__search-icon" src={searchIcon} alt="search icon"/>
                 </div>
-                <img className="header__pfp" src={pfp} alt="pfp"/>
+                <img className="header__pfp" src={pfp} alt="profile picture"/>
             </div>
 
             <div className="header__button-container">

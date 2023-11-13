@@ -18,7 +18,7 @@ function MainVideo(props) {
                 description={props.mainVideo[0].description}
             />
 
-            <Comments />
+            <Comments comments={props.mainVideo[0].comments}/>
         
         
         </div>

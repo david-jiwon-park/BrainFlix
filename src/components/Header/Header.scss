@@ -46,7 +46,7 @@
     }
 
     &__pfp {
-        @include pfp-shape;
+        @include mobile-pfp-shape;
         object-fit: cover;
         object-position: 20% 50%;
     }
@@ -58,14 +58,9 @@
 
     &__button {
         width: 100%;
-        background-color: $color-primary-cta;
         height: 2.5rem;
-        border-radius: 4px;
-        border: none;
+        @include button;
         @include mobile-button-text;
-        &:hover {
-            background-color: $color-cta-hover;
-        }
     }
     
     &__upload-icon {

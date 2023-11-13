@@ -4,34 +4,43 @@
 @mixin tablet {
     @media screen and (min-width: $tablet-width) {
       @content;
-      }
-  }
-    
-  @mixin desktop {
-    @media screen and (min-width: $desktop-width) {
-       @content;
     }
+}
+    
+@mixin desktop {
+  @media screen and (min-width: $desktop-width) {
+      @content;
   }
-  
-  /* Auto Margins for Desktop Screen Sizes */
-  @mixin desktop-auto-margin {
-    width: 63.75rem;
-    margin: auto;
-  }
+}
+
+/* Auto Margins for Desktop Screen Sizes */
+@mixin desktop-auto-margin {
+  width: 63.75rem;
+  margin: auto;
+}
 
 /* Profile Picture Icon Shape */
-@mixin pfp-shape {
-    width: 2.5rem;
-    height: 2.5rem;
+@mixin mobile-pfp-shape {
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
-  }
+}
 
-  /* Divider */
-  @mixin divider {
-    border-bottom: 0.125rem solid $color-divider-and-outline;
-  }
+/* Divider */
+@mixin divider {
+  border-bottom: 0.125rem solid $color-divider-and-outline;
+}
 
-
+/* Common Styling Used Across All Buttons */
+@mixin button {
+  border-radius: 4px;
+  border: none;
+  background-color: $color-primary-cta;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-cta-hover;
+}
+}
 
 
   /* Text Style for Text Entered in Form Fields */
@@ -41,10 +50,17 @@
     font-size: 0.9rem;
     line-height: 1.125rem;
     font-weight: 400;
-  }
+}
   
 
 
+  @mixin mobile-field-label {
+    font-family: $base-font;
+    color: $color-text-secondary;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 600;
+  }
 
   @mixin mobile-button-text {
     font-family: $base-font;
