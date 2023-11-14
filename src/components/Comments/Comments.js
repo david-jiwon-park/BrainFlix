@@ -1,44 +1,44 @@
 import './Comments.scss';
-import pfp from '../../assets/images/Mohan-muruge.jpg';
-import commentIcon from '../../assets/images/add_comment.svg';
 
 function Comments(props) {
+    
+    // Function to format dates into mm/dd/yyyy format
+    function formatDate(input) {
+        const timestamp = new Date(input.timestamp); 
+        const yyyy = timestamp.getFullYear();
+        let mm = timestamp.getMonth() + 1; 
+        let dd = timestamp.getDate();
+        
+        if (mm < 10) {
+            mm = '0' + mm
+        };
+        
+        if (dd < 10) {
+            dd = '0' + dd
+        };
+        
+        return mm + '/' + dd + '/' + yyyy;
+    };
+
+    const formattedDate = formatDate(props);
 
     return (
-        <div className="comments">
-            <h5>{props.comments.length} Comments</h5>
+        
+        <article className="comments__container">
+            <div className="comments__pfp"></div>
 
-            <form id="comment-form" className="comments__form">
-              
-                <div className="comments__container">
-                    <img className="comments__pfp" src={pfp} alt="profile picture"/>
-                        
-                    <div className="comments__user-input">
-                        
-                        {/* <!--Comment Field--> */}
-                        <label htmlFor="comment" className="comments__field-label">JOIN THE CONVERSATION</label>
-                        <div className="comments__field">
-                            <textarea className="comments__comment-textarea" name="comment" id="comment" placeholder="Add a new comment" required></textarea>
-                        </div>
-                        
-                        {/* <!--Comment Button--> */}
-
-                        <div className="comments__button-container">
-                            <button id="comment-button" className="comments__button" type="submit">
-                                COMMENT
-                            </button>
-                            <img className="comments__comment-icon" src={commentIcon} alt="comment icon"/>
-                        </div>
-
-                    </div>
+            <div className="comments__content">
+                <div className="comments__top-row">
+                    <h4 className="comments__name">{props.name}</h4>
+                    <h4 className="comments__date">{formattedDate}</h4>
                 </div>
-            </form>
 
+                <p className="comments__comment">{props.comment}</p>
+            </div>
 
-        </div>
-
-    );
+        </article>
+        
+    )
 }
-
 
 export default Comments;

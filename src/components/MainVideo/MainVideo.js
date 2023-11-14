@@ -1,5 +1,5 @@
 import VideoDetails from "../VideoDetails/VideoDetails";
-import Comments from "../Comments/Comments";
+import CommentsSection from "../CommentsSection/CommentsSection";
 
 
 function MainVideo(props) {
@@ -18,7 +18,7 @@ function MainVideo(props) {
                 description={props.mainVideo[0].description}
             />
 
-            <Comments comments={props.mainVideo[0].comments}/>
+            <CommentsSection comments={props.mainVideo[0].comments}/>
         
         
         </div>
