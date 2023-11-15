@@ -1,0 +1,37 @@
+// Video Styling 
+
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+.video {
+    padding-bottom: 1rem;
+    display: flex;
+    &__image {
+        width: 6.75rem;
+        height: 4rem;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: 1rem;
+        width: 58%;
+    }
+    &__title {
+        font-size: 0.9rem;
+        line-height: 1.125rem;
+        font-weight: 600;
+        display: -webkit-box;
+        -webkit-box-orient: vertical; 
+        -webkit-line-clamp: 2; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+    &__channel {
+        font-size: 0.8rem;
+        line-height: 1.125rem;
+        font-weight: 400;
+    }
+}

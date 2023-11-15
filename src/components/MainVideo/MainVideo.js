@@ -1,5 +1,6 @@
 import VideoDetails from "../VideoDetails/VideoDetails";
 import CommentsSection from "../CommentsSection/CommentsSection";
+import VideoList from "../VideoList/VideoList";
 
 
 function MainVideo(props) {
@@ -20,6 +21,7 @@ function MainVideo(props) {
 
             <CommentsSection comments={props.mainVideo[0].comments}/>
         
+            <VideoList videoList={props.videoList}/>
         
         </div>
 

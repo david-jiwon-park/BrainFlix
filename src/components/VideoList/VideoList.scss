@@ -1,0 +1,16 @@
+// Video List Styling 
+
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+
+.video-list {
+    padding: 0 1rem 0.5rem 1rem;
+
+    &__heading {
+        padding-bottom: 1rem;
+        @include mobile-field-label;
+    }
+}
+
+    
