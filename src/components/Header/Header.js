@@ -9,10 +9,10 @@ function Header() {
     return (
         <header className="header">
             
-            <img src={brainflixLogo} alt="logo"/>
+            <img className="header__logo" src={brainflixLogo} alt="logo"/>
 
             <div className="header__search-bar-container">
-                <div className="header__search-bar">
+                <form className="header__search-bar">
                     <input 
                         className="header__search-input"
                         type="text"
@@ -21,8 +21,8 @@ function Header() {
                         placeholder="Search"
                     />
                     <img className="header__search-icon" src={searchIcon} alt="search icon"/>
-                </div>
-                <img className="header__pfp" src={pfp} alt="profile picture"/>
+                </form>
+                <img className="header__pfp-mobile" src={pfp} alt="profile picture"/>
             </div>
 
             <div className="header__button-container">
@@ -31,6 +31,8 @@ function Header() {
                 </button>
                 <img className="header__upload-icon" src={uploadIcon} alt="upload icon"/>
             </div>
+
+            <img className="header__pfp-td" src={pfp} alt="profile picture"/>
 
         </header>
     );

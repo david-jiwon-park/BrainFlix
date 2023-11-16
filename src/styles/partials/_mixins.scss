@@ -19,12 +19,20 @@
   margin: auto;
 }
 
-/* Profile Picture Icon Shape */
+/* Mobile Profile Picture Icon Shape */
 @mixin mobile-pfp-shape {
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
 }
+
+/* Tablet and Desktop Profile Picture Icon Shape */
+@mixin td-pfp-shape {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
 
 /* Divider */
 @mixin divider {

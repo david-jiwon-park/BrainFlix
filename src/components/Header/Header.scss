@@ -9,11 +9,27 @@
     align-items: center;
     padding: 1rem;
 
+    @include tablet {
+        flex-direction: row;
+        padding: 0 2.25rem;
+    }
+
+    // &__logo {
+    //     @include tablet {
+    //     padding-right: 30%;
+    //     }
+    // }
+
     &__search-bar-container {
         width: 100%;
         display: flex;
         justify-content: center;
         padding: 1rem 0;
+        @include tablet {
+            width: 16rem;
+            margin-left: auto;
+            padding-right: 0.25rem;
+        }
     }
 
     &__search-bar {
@@ -45,15 +61,34 @@
         left: 0.75rem;
     }
 
-    &__pfp {
+    &__pfp-mobile {
         @include mobile-pfp-shape;
         object-fit: cover;
         object-position: 20% 50%;
+        @include tablet {
+            display: none;
+        }
     }
+
+    &__pfp-td {
+        display: none;
+        @include tablet {
+            display: inline-block;
+            @include td-pfp-shape;
+            object-fit: cover;
+            object-position: 20% 50%;
+        }
+    }
+
+
 
     &__button-container {
         width: 100%;
         position: relative;
+        @include tablet {
+            width: fit-content;
+            padding-right: 1.25rem;
+        }
     }
 
     &__button {
@@ -61,6 +96,9 @@
         height: 2.5rem;
         @include button;
         @include mobile-button-text;
+        @include tablet {
+            width: 10rem;
+        }
     }
     
     &__upload-icon {
