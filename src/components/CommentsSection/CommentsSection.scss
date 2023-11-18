@@ -5,7 +5,10 @@
 
 
 .comments-section {
-    padding: 0 1rem 1rem 1rem;
+    padding: 0 1rem 1rem;
+    @include tablet {
+        padding: 0 2.25rem 1.5rem;
+    }
 }
 
     
