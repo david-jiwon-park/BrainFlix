@@ -6,11 +6,10 @@
 
 .comments-form {
 
-    &__container {
-        display: flex;
-        @include divider; 
-    }
-
+    display: flex;
+    @include desktop {
+        padding-right: 1.5rem;
+    } 
     &__pfp {
         @include mobile-pfp-shape;
         object-fit: cover;

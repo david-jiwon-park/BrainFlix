@@ -24,7 +24,7 @@ function Comments(props) {
 
     return (
         
-        <article className="comments__container">
+        <article className="comments">
             <div className="comments__pfp"></div>
 
             <div className="comments__content">

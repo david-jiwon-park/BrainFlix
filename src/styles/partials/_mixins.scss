@@ -34,9 +34,17 @@
 }
 
 
-/* Divider */
-@mixin divider {
+/* Dividers */
+@mixin top-divider {
+  border-top: 0.125rem solid $color-divider-and-outline;
+}
+
+@mixin bottom-divider {
   border-bottom: 0.125rem solid $color-divider-and-outline;
+}
+
+@mixin desktop-vertical-divider {
+  border-right: 0.125rem solid $color-divider-and-outline;
 }
 
 /* Common Styling Used Across All Buttons */

@@ -10,7 +10,7 @@ function CommentsSection(props) {
 
             <CommentsForm />
             
-            <section>
+            <div className="comments-section__comments">
                 {props.comments.map((comment) => (
                     <Comments 
                         key={comment.id}
@@ -19,7 +19,7 @@ function CommentsSection(props) {
                         timestamp={comment.timestamp}
                     />
                 ))}
-            </section>
+            </div>
         </div>
 
     );

@@ -4,22 +4,16 @@
 @import '../../styles/partials/mixins';
 
 .comments {
-    &__desktop-container {
-        @include desktop {
-            @include desktop-auto-margin; 
-        }
+    display: flex;
+    padding: 1rem 0;
+    @include top-divider; 
+    @include tablet {
+        padding: 1.5rem 0;    
     }
-    &__container {
-        display: flex;
-        padding: 1rem 0;
-        @include divider; 
-        @include tablet {
-            padding: 1.5rem 0;    
-        }
-        @include desktop {
-            margin: 0 15.5rem;                          
-        }
+    @include desktop {
+        padding-right: 1.5rem;
     }
+
     &__pfp {
         @include mobile-pfp-shape;
         box-sizing: border-box;

@@ -9,24 +9,32 @@
     @include tablet {
         padding: 1.5rem 2.25rem 2.25rem;
     }
-    
+    @include desktop {
+        padding: 2.25rem 0;
+    }
+
     &__title {
         padding-bottom: 1rem;
-        @include divider;
+        @include bottom-divider;
         @include tablet {
             border: none;
             @include td-header-text;
             padding: 0;
+        }
+        @include desktop {
+            padding-right: 1.5rem;
         }
     }
 
     &__data {
         display: flex;
         padding: 1rem 0;
-        @include divider;
         @include tablet {
             justify-content: space-between;
             padding: 1rem 0 0.75rem 0;
+        }
+        @include desktop {
+            padding: 1rem 1.5rem 1rem 0;
         }
         &--left {
             width: 50%;
@@ -71,10 +79,14 @@
 
     &__description {
         padding-top: 1rem;
+        @include top-divider;
         @include mobile-body-text;
         @include tablet {
             @include td-body-text;
             padding-top: 1.5rem;
+        }
+        @include desktop {
+            padding-right: 1.5rem;
         }
     }
 }
