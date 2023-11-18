@@ -51,7 +51,7 @@
 }
 
 
-  /* Text Style for Text Entered in Form Fields */
+/* Text Style for Text Entered in Form Fields */
 @mixin field-text {
   font-family: $base-font;
   color: $color-primary-dark;
@@ -59,7 +59,16 @@
   line-height: 1.125rem;
   font-weight: 400;
 }
-  
+
+/* Button Text */
+@mixin button-text {
+  font-family: $base-font;
+  color: $color-primary-light;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
 
 
 /* Mobile Text Styles  */
@@ -83,11 +92,11 @@
   color: $color-primary-light;
   font-size: 0.625rem;
   line-height: 1.25rem;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 @mixin mobile-posted-name {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.125rem;
   font-weight: 700;
 }
@@ -126,10 +135,3 @@
   font-weight: 700;
 }
 
-@mixin td-button-text {
-  font-family: $base-font;
-  color: $color-primary-light;
-  font-size: 0.75rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-}

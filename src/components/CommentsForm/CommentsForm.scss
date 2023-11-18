@@ -87,10 +87,9 @@
         width: 100%;
         height: 2.5rem;
         @include button;
-        @include mobile-button-text;
+        @include button-text;
         @include tablet {
             width: 9.375rem;
-            @include td-button-text;
         }
     }
 
@@ -99,9 +98,5 @@
         top: 0.75rem;
         left: 0.6rem;
         height: 1rem;
-        @include tablet {
-            @include td-button-text;
-        }
     }
-
 }
