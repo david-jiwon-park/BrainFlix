@@ -99,6 +99,18 @@
   font-weight: 400;
 }
 
+@mixin video-data-text {
+  color: $color-text-secondary;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
+@mixin video-channel-name {
+  font-size: 0.85rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
 
 /* Tablet and Desktop Text Styles  */
 
@@ -107,3 +119,10 @@
   line-height: 1.375rem;
   font-weight: 400;
 }
+
+@mixin td-header-text {
+  font-size: 2.0625rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+}
+

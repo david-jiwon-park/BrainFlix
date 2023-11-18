@@ -32,19 +32,19 @@ function VideoDetails(props) {
             <div className="video-details__data">
 
                 <div className="video-details__data--left">
-                    <h5 className="video-details__channel">By {props.channel}</h5>
-                    <h5>{formattedDate}</h5>
+                    <h4 className="video-details__channel">By {props.channel}</h4>
+                    <h5 className="video-details__data-text">{formattedDate}</h5>
                 </div>
                     
-                <div>
+                <div className="video-details__data--right"> 
                     <div className="video-details__views">
                         <img className="video-details__icon" src={viewsIcon} alt="views icon"/>
-                        <h5>{props.views}</h5>
+                        <h5 className="video-details__data-text">{props.views}</h5>
                     </div>
 
                     <div className="video-details__likes">
                         <img className="video-details__icon" src={likesIcon} alt="likes icon"/>
-                        <h5>{props.likes}</h5>
+                        <h5 className="video-details__data-text">{props.likes}</h5>
                     </div>
                 </div>
 
