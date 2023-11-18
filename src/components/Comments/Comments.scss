@@ -25,10 +25,13 @@
         box-sizing: border-box;
         background-color: $color-divider-and-outline;
         padding-right: 2.25rem;
+        @include tablet {
+            @include td-pfp-shape;
+        }
     }
     &__content {
         width: 100%;
-        padding-left: 1rem;
+        padding-left: 1.5rem;
     }
     &__top-row {
         width: 100%;

@@ -5,11 +5,17 @@
 
 
 .video-list {
-    padding: 0 1rem 0.5rem 1rem;
+    padding: 0 1rem 0.5rem;
+    @include tablet {
+        padding: 0 2.25rem 0.5rem;
+    }
 
     &__heading {
         padding-bottom: 1rem;
         @include mobile-field-label;
+        @include tablet {
+            padding-bottom: 1.5rem;
+        }
     }
 }
 

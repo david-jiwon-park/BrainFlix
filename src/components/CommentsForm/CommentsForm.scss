@@ -18,7 +18,7 @@
         margin-top: 2.5rem;
         @include tablet {
             @include td-pfp-shape; 
-            margin-top: 2.25rem;
+            margin-top: 2.85rem;
         }
     }
 
@@ -29,6 +29,7 @@
         padding: 1rem 0 1rem 1rem;
         @include tablet {
             flex-direction: row;
+            padding: 1.5rem 0 1.5rem 1.5rem;
         }
 
     }
