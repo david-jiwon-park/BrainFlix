@@ -3,6 +3,13 @@
 @import '../../styles/partials/variables';
 @import '../../styles/partials/mixins';
 
+.desktop-container {
+    @include desktop {
+        @include desktop-auto-margin;
+    }
+}
+
+
 .header {
     display: flex;
     flex-direction: column;
