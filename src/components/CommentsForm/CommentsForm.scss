@@ -16,6 +16,10 @@
         object-fit: cover;
         object-position: 20% 50%;
         margin-top: 2.5rem;
+        @include tablet {
+            @include td-pfp-shape; 
+            margin-top: 2.25rem;
+        }
     }
 
     &__user-input {
@@ -23,37 +27,60 @@
         display: flex;
         flex-direction: column;
         padding: 1rem 0 1rem 1rem;
+        @include tablet {
+            flex-direction: row;
+        }
+
+    }
+
+    &__field-container {
+        @include tablet {
+            width: 100%;
+            padding-right: 1.5rem;
+        }
     }
 
     &__field-label {
         @include mobile-field-label;
-    }
+    }   
 
     &__field {
         padding: 0.25rem 0 1rem;
+        @include tablet {
+            padding: 0.25rem 0 0;
+        }
     }
 
     &__comment-textarea {
         box-sizing: border-box;
-        min-height: 6.5rem;
+        height: 6.5rem;
         width: 100%;
         background: $color-field-background;
         border: 1px solid $color-divider-and-outline;
         border-radius: 4px; 
-        padding: 0.5rem;
         @include field-text;
         resize: none;
         &::placeholder {
             @include field-text;
-            padding: 0.25rem 0 0 0.25rem;
+            padding: 0.75rem 0 0 0.75rem;
+            @include tablet {
+                padding: 0.6rem 0 0 1rem;
+            }
         }
         &:active {
             border: 1px solid $color-primary-dark;
+        }
+        @include tablet {
+            height: 2.5rem;
         }
     }
 
     &__button-container {
         position: relative;
+        @include tablet {
+            align-self: flex-end;
+            padding-bottom: 0.35rem;
+        }
     }
 
     &__button {
@@ -61,12 +88,20 @@
         height: 2.5rem;
         @include button;
         @include mobile-button-text;
+        @include tablet {
+            width: 9.375rem;
+            @include td-button-text;
+        }
     }
 
     &__comment-icon {
         position: absolute;
-        top: 0.5rem;
+        top: 0.75rem;
         left: 0.6rem;
+        height: 1rem;
+        @include tablet {
+            @include td-button-text;
+        }
     }
 
 }

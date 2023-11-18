@@ -55,7 +55,7 @@
 @mixin field-text {
   font-family: $base-font;
   color: $color-primary-dark;
-  font-size: 0.9rem;
+  font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
 }
@@ -81,9 +81,9 @@
 @mixin mobile-button-text {
   font-family: $base-font;
   color: $color-primary-light;
-  font-size: 0.8rem;
-  line-height: 1.125rem;
-  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
 }
 
 @mixin mobile-posted-name {
@@ -126,3 +126,10 @@
   font-weight: 700;
 }
 
+@mixin td-button-text {
+  font-family: $base-font;
+  color: $color-primary-light;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}

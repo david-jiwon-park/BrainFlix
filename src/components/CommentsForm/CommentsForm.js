@@ -12,10 +12,12 @@ function CommentsForm() {
                     
                 <div className="comments-form__user-input">
                     
-                    {/* <!--Comment Field--> */}
-                    <label htmlFor="comment" className="comments-form__field-label">JOIN THE CONVERSATION</label>
-                    <div className="comments-form__field">
-                        <textarea className="comments-form__comment-textarea" name="comment" id="comment" placeholder="Add a new comment" required></textarea>
+                    {/* <!--Comment Field--> */}                   
+                    <div className="comments-form__field-container">
+                        <label htmlFor="comment" className="comments-form__field-label">JOIN THE CONVERSATION</label>
+                        <div className="comments-form__field">
+                            <textarea className="comments-form__comment-textarea" name="comment" id="comment" placeholder="Add a new comment" required></textarea>
+                        </div>
                     </div>
                     
                     {/* <!--Comment Button--> */}
