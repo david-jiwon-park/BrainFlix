@@ -88,19 +88,10 @@
 }
 
 @mixin mobile-field-label {
-  font-family: $base-font;
   color: $color-text-secondary;
   font-size: 0.75rem;
   line-height: 1.125rem;
   font-weight: 600;
-}
-
-@mixin mobile-button-text {
-  font-family: $base-font;
-  color: $color-primary-light;
-  font-size: 0.625rem;
-  line-height: 1.25rem;
-  font-weight: 400;
 }
 
 @mixin mobile-posted-name {

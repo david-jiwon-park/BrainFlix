@@ -1,11 +1,11 @@
-// General Styling across entire BrainFlix
+// General Styling across entire BrainFlix Site
 
 @import './styles/partials/fonts';
 @import './styles/partials/mixins';
 @import './styles/partials/variables';
 
 
-body {
+.app {
     box-sizing: border-box;
     font-family: $base-font;
     color: $color-primary-dark;
@@ -13,7 +13,7 @@ body {
     margin: 0;
 }
 
-h1, h3, h4, h5, p {
+h1, h2, h3, h4, h5, p {
     margin: 0;
 }
 
