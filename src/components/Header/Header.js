@@ -12,6 +12,7 @@ function Header() {
                 
                 <img className="header__logo" src={brainflixLogo} alt="logo"/>
 
+                {/* Make search bar into component */}
                 <div className="header__search-bar-container">
                     <form className="header__search-bar">
                         <input 
@@ -26,6 +27,7 @@ function Header() {
                     <img className="header__pfp-mobile" src={pfp} alt="profile picture"/>
                 </div>
 
+                {/* Make button into component */}
                 <div className="header__button-container">
                     <button id="upload-button" className="header__button">
                         UPLOAD

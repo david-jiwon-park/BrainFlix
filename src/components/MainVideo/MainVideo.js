@@ -8,9 +8,9 @@ function MainVideo(props) {
    
     return (
         <div>
-            <video width="100%" controls poster={props.videoList[0].image}>
-            </video>
-
+            <div className="video-wrapper">
+                <video controls poster={props.videoList[0].image}></video>
+            </div>
             <div className="desktop-container">
                 <div className="desktop-container__video-details-comments">
                     <VideoDetails 
