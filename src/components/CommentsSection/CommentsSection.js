@@ -2,16 +2,16 @@ import './CommentsSection.scss';
 import CommentsForm from "../CommentsForm/CommentsForm"
 import Comments from "../Comments/Comments";
 
-function CommentsSection(props) {
+function CommentsSection({comments}) {
 
     return (
         <div className="comments-section">
-            <h5>{props.comments.length} Comments</h5>
+            <h5>{comments.length} Comments</h5>
 
             <CommentsForm />
             
             <div className="comments-section__comments">
-                {props.comments.map((comment) => (
+                {comments.map((comment) => (
                     <Comments 
                         key={comment.id}
                         name={comment.name}
