@@ -1,6 +1,5 @@
 import Header from './components/Header/Header';
 import MainVideo from './components/MainVideo/MainVideo';
-import videoList from './data/video-details.json';
 import './App.scss';
 
 
@@ -9,10 +8,8 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
-      <MainVideo 
-        videoList={videoList}
-        />
+      <Header/>
+      <MainVideo/>
     </div>
   );
 }

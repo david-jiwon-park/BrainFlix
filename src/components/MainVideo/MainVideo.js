@@ -1,31 +1,41 @@
 import './MainVideo.scss';
+import videoDetails from '../../data/video-details.json';
 import VideoDetails from "../VideoDetails/VideoDetails";
 import CommentsSection from "../CommentsSection/CommentsSection";
+import videos from '../../data/videos.json';
 import VideoList from "../VideoList/VideoList";
+import { useState } from "react";
 
 
-function MainVideo(props) {
+function MainVideo() {
    
+
+    const [videoId, setVideoId] = useState("84e96018-4022-434e-80bf-000ce4cd12b8");
+
+    const videoIndex = (videoDetails.map(video => video.id).indexOf(videoId));
+
+
+
     return (
         <div>
             <div className="video-wrapper">
-                <video controls poster={props.videoList[0].image}></video>
+                <video controls poster={videoDetails[videoIndex].image}></video>
             </div>
             <div className="desktop-container">
                 <div className="desktop-container__video-details-comments">
                     <VideoDetails 
-                        title={props.videoList[0].title}
-                        channel={props.videoList[0].channel}
-                        timestamp={props.videoList[0].timestamp}
-                        views={props.videoList[0].views}
-                        likes={props.videoList[0].likes}
-                        description={props.videoList[0].description}
+                        title={videoDetails[videoIndex].title}
+                        channel={videoDetails[videoIndex].channel}
+                        timestamp={videoDetails[videoIndex].timestamp}
+                        views={videoDetails[videoIndex].views}
+                        likes={videoDetails[videoIndex].likes}
+                        description={videoDetails[videoIndex].description}
                     />
 
-                    <CommentsSection comments={props.videoList[0].comments}/>
+                    <CommentsSection comments={videoDetails[videoIndex].comments}/>
                 </div>
                 
-                <VideoList videoList={props.videoList}/>
+                <VideoList videos={videos} videoId={videoId} setVideoId={setVideoId}/>
                 
             </div>
         </div>
