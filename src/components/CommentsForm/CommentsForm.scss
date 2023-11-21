@@ -5,7 +5,6 @@
 
 
 .comments-form {
-
     display: flex;
     @include desktop {
         padding-right: 1.5rem;
@@ -20,7 +19,6 @@
             margin-top: 2.85rem;
         }
     }
-
     &__user-input {
         width: 100%;
         display: flex;
@@ -30,28 +28,24 @@
             flex-direction: row;
             padding: 1.5rem 0 1.5rem 1.5rem;
         }
-
     }
-
     &__field-container {
         @include tablet {
             width: 100%;
             padding-right: 1.5rem;
         }
     }
-
     &__field-label {
         @include mobile-field-label;
     }   
-
     &__field {
         padding: 0.25rem 0 1rem;
         @include tablet {
             padding: 0.25rem 0 0;
         }
     }
-
     &__comment-textarea {
+        outline: none;
         box-sizing: border-box;
         height: 6.5rem;
         width: 100%;
@@ -64,15 +58,14 @@
         &::placeholder {
             @include field-text;
         }
-        &:active {
-            border: 1px solid $color-primary-dark;
+        &:focus {
+            @include field-active-state;
         }
         @include tablet {
             height: 2.5rem;
             padding: 0.65rem 0 0 1rem;
         }
     }
-
     &__button-container {
         position: relative;
         @include tablet {
@@ -80,7 +73,6 @@
             padding-bottom: 0.35rem;
         }
     }
-
     &__button {
         width: 100%;
         height: 2.5rem;
@@ -90,7 +82,6 @@
             width: 9.375rem;
         }
     }
-
     &__comment-icon {
         position: absolute;
         top: 0.75rem;
