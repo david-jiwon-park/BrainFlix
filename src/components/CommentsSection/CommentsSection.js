@@ -4,9 +4,18 @@ import Comments from "../Comments/Comments";
 
 function CommentsSection({comments}) {
 
+    const commentsText = () => {
+        if (comments.length == 1) {
+            return "Comment";
+        }
+        else {
+            return "Comments";
+        }
+    }
+
     return (
         <div className="comments-section">
-            <h5>{comments.length} Comments</h5>
+            <h5>{comments.length} {`${comments.length === 1 ? `Comment` : `Comments`}`}</h5>
 
             <CommentsForm />
             
