@@ -7,10 +7,10 @@
 .comments-section {
     padding: 0 1rem 1rem;
     @include tablet {
-        padding: 0 2.25rem 1.5rem;
+        padding: 0.5rem 2.25rem 1.5rem;
     }
     @include desktop {
-        padding: 0 0 1.5rem;
+        padding: 1rem 0 1.5rem;
     }
     &__comments {
         @include bottom-divider;
