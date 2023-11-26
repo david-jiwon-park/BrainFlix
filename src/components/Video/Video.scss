@@ -4,11 +4,15 @@
 @import '../../styles/partials/mixins';
 
 .video {
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
     display: flex;
+    cursor: pointer;
+    @include tablet {
+        padding-bottom: 1.5rem;
+    }
     &__image {
         width: 6.75rem;
-        height: 4rem;
+        height: 4.35rem;
         object-fit: cover;
         border-radius: 4px;
     }
@@ -17,24 +21,26 @@
         flex-direction: column;
         justify-content: space-around;
         padding-left: 1rem;
-        width: 10rem;
+        width: 10.25rem;
         @include tablet {
             width: 10.75rem;
         }
     }
     &__title {
-        font-size: 0.85rem;
-        line-height: 1.125rem;
-        font-weight: 600;
+        @include mobile-next-video-title;
         display: -webkit-box;
         -webkit-box-orient: vertical; 
         -webkit-line-clamp: 2; 
         overflow: hidden; 
         text-overflow: ellipsis; 
+        @include tablet {
+            @include td-next-video-title;
+        }
     }
     &__channel {
-        font-size: 0.8rem;
-        line-height: 1.125rem;
-        font-weight: 400;
+        @include mobile-next-video-channel;
+        @include tablet {
+            @include td-next-video-channel;
+        }
     }
 }
