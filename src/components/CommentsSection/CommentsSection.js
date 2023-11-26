@@ -2,16 +2,7 @@ import './CommentsSection.scss';
 import CommentsForm from "../CommentsForm/CommentsForm"
 import Comments from "../Comments/Comments";
 
-function CommentsSection({comments}) {
-
-    const commentsText = () => {
-        if (comments.length == 1) {
-            return "Comment";
-        }
-        else {
-            return "Comments";
-        }
-    }
+function CommentsSection({comments, formatDate}) {
 
     return (
         <div className="comments-section">
@@ -26,6 +17,7 @@ function CommentsSection({comments}) {
                         name={comment.name}
                         comment={comment.comment}
                         timestamp={comment.timestamp}
+                        formatDate={formatDate}
                     />
                 ))}
             </div>
