@@ -4,6 +4,7 @@ function Video(props) {
     
     function handleClick() {
         props.handleVideoSelect(props.id);
+        window.scrollTo(0, 0);
     };
 
     return (
