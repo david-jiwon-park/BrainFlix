@@ -3,24 +3,6 @@
 @import '../../styles/partials/variables';
 @import '../../styles/partials/mixins';
 
-
-.video-wrapper {
-    --aspect-ratio: 16 / 9;
-}
-
-video {
-    width: 100%;
-    background-color: $color-primary-dark;
-    @include tablet {
-        max-height: 27rem;
-    }
-    @include desktop {
-        max-height: 30rem;
-    }
-    
-    
-}
-
 .desktop-container {
     @include desktop {
         @include desktop-auto-margin;

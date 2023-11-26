@@ -1,0 +1,20 @@
+// Video Player Styling 
+
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+
+.video-player {
+    --aspect-ratio: 16 / 9;
+}
+
+video {
+    width: 100%;
+    background-color: $color-primary-dark;
+    @include tablet {
+        max-height: 27rem;
+    }
+    @include desktop {
+        max-height: 30rem;
+    }
+}

@@ -1,5 +1,6 @@
 import './MainVideo.scss';
 import videoDetails from '../../data/video-details.json';
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import VideoDetails from "../VideoDetails/VideoDetails";
 import CommentsSection from "../CommentsSection/CommentsSection";
 import videos from '../../data/videos.json';
@@ -35,9 +36,9 @@ function MainVideo() {
 
     return (
         <div>
-            <div className="video-wrapper">
-                <video controls poster={videoDetails[videoIndex].image}></video>
-            </div>
+
+            <VideoPlayer videoPoster={videoDetails[videoIndex].image}/>
+
             <div className="desktop-container">
                 <div className="desktop-container__video-details-comments">
                     <VideoDetails 
