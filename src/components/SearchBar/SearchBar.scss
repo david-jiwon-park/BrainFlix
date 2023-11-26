@@ -1,0 +1,51 @@
+// Search Bar Styling 
+
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+.search-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    @include tablet {
+        width: 16rem;
+        margin-left: auto;
+        padding-right: 0.25rem;
+    }
+    &__form {
+        width: 100%;
+        position: relative;
+        padding-right: 1rem;
+    }
+    &__input {
+        outline: none;
+        box-sizing: border-box;
+        height: 2.5rem;
+        width: 100%;
+        background: $color-field-background;
+        border: 1px solid $color-divider-and-outline;
+        border-radius: 4px; 
+        padding-left: 2.5rem;
+        @include field-text;
+        &::placeholder {
+            @include field-text;
+        }
+        &:focus {
+            @include field-active-state;
+        }
+    }
+    &__icon {
+        position: absolute;
+        top: 0.6rem;
+        left: 0.75rem;
+    }
+    &__pfp-mobile {
+        @include mobile-pfp-shape;
+        object-fit: cover;
+        object-position: 20% 50%;
+        @include tablet {
+            display: none;
+        }
+    }
+}
