@@ -80,6 +80,20 @@
   font-weight: 400;
 }
 
+/* General Text Styles  */
+@mixin video-data-text {
+  color: $color-text-secondary;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
+@mixin video-channel-name {
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
 /* Mobile Text Styles  */
 @mixin mobile-body-text {
   font-size: 0.8125rem;
@@ -105,19 +119,6 @@
   font-size: 0.9rem;
   line-height: 1.125rem;
   font-weight: 400;
-}
-
-@mixin video-data-text {
-  color: $color-text-secondary;
-  font-size: 0.75rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-}
-
-@mixin video-channel-name {
-  font-size: 0.85rem;
-  line-height: 1.25rem;
-  font-weight: 700;
 }
 
 /* Tablet and Desktop Text Styles  */
