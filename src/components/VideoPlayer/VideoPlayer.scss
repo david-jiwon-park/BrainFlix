@@ -5,16 +5,29 @@
 
 
 .video-player {
-    --aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    @include tablet {
+        padding: 0;
+    }
 }
 
 video {
+    background-color: $color-video-player-comps;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
-    background-color: $color-primary-dark;
+    height: 100%;
     @include tablet {
+        position: relative;
         max-height: 27rem;
     }
     @include desktop {
-        max-height: 30rem;
+        max-height: 34rem;
     }
 }
