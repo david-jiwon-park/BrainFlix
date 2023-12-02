@@ -1,3 +1,5 @@
+// Component for Upload Button in Header
+
 import './UploadButton.scss';
 import uploadIcon from '../../assets/images/upload.svg';
 

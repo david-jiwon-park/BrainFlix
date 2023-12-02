@@ -1,7 +1,10 @@
+// Component for each video that is mapped from the videos list
+
 import './Video.scss'
 
 function Video(props) {
     
+    // onClick function that changes the videoId state to the ID of the video that is clicked on, and then scrolls to the top of the page
     function handleClick() {
         props.handleVideoSelect(props.id);
         window.scrollTo(0, 0);

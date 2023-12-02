@@ -2,14 +2,14 @@
 
 /* Screen Sizes */
 @mixin tablet {
-    @media screen and (min-width: $tablet-width) {
-      @content;
-    }
+  @media screen and (min-width: $tablet-width) {
+    @content;
+  }
 }
     
 @mixin desktop {
   @media screen and (min-width: $desktop-width) {
-      @content;
+    @content;
   }
 }
 
@@ -21,9 +21,9 @@
 
 /* Mobile Profile Picture Icon Shape */
 @mixin mobile-pfp-shape {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
 }
 
 /* Tablet and Desktop Profile Picture Icon Shape */

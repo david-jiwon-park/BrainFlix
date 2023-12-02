@@ -1,3 +1,5 @@
+// Component for Comments Form where comments are to be submitted
+
 import './CommentsForm.scss';
 import pfp from '../../assets/images/Mohan-muruge.jpg';
 import commentIcon from '../../assets/images/add_comment.svg';

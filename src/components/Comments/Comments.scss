@@ -1,4 +1,4 @@
-/* Comments Styling */
+// Comments Styling
 
 @import '../../styles/partials/variables';
 @import '../../styles/partials/mixins';
@@ -13,7 +13,6 @@
     @include desktop {
         padding-right: 1.5rem;
     }
-
     &__pfp {
         @include mobile-pfp-shape;
         box-sizing: border-box;

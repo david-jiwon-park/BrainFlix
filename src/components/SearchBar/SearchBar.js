@@ -1,3 +1,5 @@
+// Component for Search Bar within Header
+
 import './SearchBar.scss';
 import searchIcon from '../../assets/images/search.svg';
 import pfp from '../../assets/images/Mohan-muruge.jpg';

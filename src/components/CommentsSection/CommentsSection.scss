@@ -3,7 +3,6 @@
 @import '../../styles/partials/variables';
 @import '../../styles/partials/mixins';
 
-
 .comments-section {
     padding: 0 1rem 1rem;
     @include tablet {
@@ -18,7 +17,6 @@
             border: none;
         }
     }
-
 }
 
     

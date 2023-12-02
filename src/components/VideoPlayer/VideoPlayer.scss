@@ -3,14 +3,13 @@
 @import '../../styles/partials/variables';
 @import '../../styles/partials/mixins';
 
-
 .video-player {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%;
+    padding-top: 56.25%; /* Maintains 16:9 aspect ratio */
     @include tablet {
-        padding: 0;
+        padding: 0; /* Max-height is set once the screen size reaches tablet size, so 16:9 ratio can no longer be maintained */
     }
 }
 

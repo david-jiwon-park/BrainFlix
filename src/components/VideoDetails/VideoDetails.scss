@@ -12,7 +12,6 @@
     @include desktop {
         padding: 2.25rem 0;
     }
-
     &__title {
         padding-bottom: 1rem;
         @include bottom-divider;
@@ -25,7 +24,6 @@
             padding-right: 1.5rem;
         }
     }
-
     &__data {
         display: flex;
         padding: 1rem 0;
@@ -48,7 +46,6 @@
             }
         }
     }
-
     &__channel {
         padding-bottom: 1rem;
         @include video-channel-name;
@@ -56,14 +53,12 @@
             padding: 0 1.5rem 0 0; 
         }
     }
-
     &__data-text {
         @include video-data-text;
         &--right {
         padding-top: 0.25rem;
         }
     }
-
     &__views {
         display: flex;
         padding-bottom: 1rem;
@@ -71,15 +66,12 @@
             padding: 0 1.5rem 0 0; 
         }
     }
-
     &__icon {
         padding-right: 0.5rem;
     }
-
     &__likes {
         display: flex;
     }
-
     &__description {
         padding-top: 1rem;
         @include top-divider;
