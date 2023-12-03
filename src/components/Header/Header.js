@@ -16,7 +16,7 @@ function Header() {
                 
                 <UploadButton/>
                 
-                <img className="header__pfp-td" src={pfp} alt="profile picture"/>
+                <img className="header__pfp-td" src={pfp} alt="profile icon"/>
             </header>
         </div>
     );

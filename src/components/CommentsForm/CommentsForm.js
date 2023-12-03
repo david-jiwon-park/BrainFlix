@@ -8,7 +8,7 @@ function CommentsForm() {
 
     return (
         <form id="comment-form" className="comments-form">
-            <img className="comments-form__pfp" src={pfp} alt="profile picture"/>
+            <img className="comments-form__pfp" src={pfp} alt="profile icon"/>
                 
             <div className="comments-form__user-input">
                 

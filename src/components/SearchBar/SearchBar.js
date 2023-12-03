@@ -17,7 +17,7 @@ function SearchBar() {
                 />
                 <img className="search-bar__icon" src={searchIcon} alt="search icon"/>
             </form>
-            <img className="search-bar__pfp-mobile" src={pfp} alt="profile picture"/>
+            <img className="search-bar__pfp-mobile" src={pfp} alt="profile icon"/>
         </div>
     );
 }
