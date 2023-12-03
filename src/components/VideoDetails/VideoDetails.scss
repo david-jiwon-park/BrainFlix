@@ -3,7 +3,6 @@
 @import '../../styles/partials/variables';
 @import '../../styles/partials/mixins';
 
-
 .video-details {
     padding: 1rem;
     @include tablet {
@@ -55,9 +54,6 @@
     }
     &__data-text {
         @include video-data-text;
-        &--right {
-            align-self: flex-end;
-        }
     }
     &__views {
         display: flex;
