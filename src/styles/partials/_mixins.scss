@@ -83,13 +83,13 @@
 /* General Text Styles  */
 @mixin video-data-text {
   color: $color-text-secondary;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   line-height: 1.25rem;
   font-weight: 400;
 }
 
 @mixin video-channel-name {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.25rem;
   font-weight: 700;
 }
