@@ -7,7 +7,7 @@ function VideoPlayer({videoPoster}) {
         <div className="video-player">
             <video controls poster={videoPoster}></video>
         </div>
-    )
+    );
 }
 
 export default VideoPlayer;

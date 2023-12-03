@@ -11,28 +11,25 @@ function VideoList({videos, videoId, setVideoId}) {
     };
 
     return (
-        <div className="video-list">
+        <section className="video-list">
             <h4 className="video-list__heading">NEXT VIDEOS</h4>
 
-            <section>
-               
-                {/* Filtering out the selected video from the videos list, and then mapping the remaining videos */}
-                {videos.filter((video) => {
-                    return video.id !== videoId;
-                })
-                .map((video) => (
-                    <Video 
-                        key={video.id}
-                        id={video.id}
-                        title={video.title}
-                        channel={video.channel}
-                        image={video.image}
-                        handleVideoSelect={handleVideoSelect}
-                    />
-                ))}
+            {/* Filtering out the selected video from the videos list, and then mapping the remaining videos */}
+            {videos.filter((video) => {
+                return video.id !== videoId;
+            })
+            .map((video) => (
+                <Video 
+                    key={video.id}
+                    id={video.id}
+                    title={video.title}
+                    channel={video.channel}
+                    image={video.image}
+                    handleVideoSelect={handleVideoSelect}
+                />
+            ))}
 
-            </section>
-        </div>
+        </section>
     );
 }
 

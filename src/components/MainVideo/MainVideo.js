@@ -36,7 +36,7 @@ function MainVideo() {
     const videoIndex = (videoDetails.map(video => video.id).indexOf(videoId));
 
     return (
-        <div>
+        <main>
             
             <VideoPlayer videoPoster={videoDetails[videoIndex].image}/>
             
@@ -67,7 +67,8 @@ function MainVideo() {
                 />
 
             </div>
-        </div>
+            
+        </main>
     );
 }
 

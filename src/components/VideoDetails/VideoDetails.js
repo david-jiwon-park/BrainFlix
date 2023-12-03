@@ -11,7 +11,7 @@ function VideoDetails(props) {
     const formattedDate = props.formatDate(props);
 
     return (
-        <div className="video-details">
+        <section className="video-details">
             <h1 className="video-details__title">{props.title}</h1>
             
             <div className="video-details__data">
@@ -32,7 +32,7 @@ function VideoDetails(props) {
             </div>
             
             <p className="video-details__description">{props.description}</p>
-        </div>
+        </section>
     );
 }
 
