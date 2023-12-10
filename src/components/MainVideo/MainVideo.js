@@ -5,9 +5,10 @@ import videoDetails from '../../data/video-details.json';
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import VideoDetails from "../VideoDetails/VideoDetails";
 import CommentsSection from "../CommentsSection/CommentsSection";
-import videos from '../../data/videos.json';
 import VideoList from "../VideoList/VideoList";
-import { useState } from "react";
+
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function MainVideo() {
    
@@ -32,8 +33,22 @@ function MainVideo() {
     // React State for video ID of selected video, starting Video ID is for the "BMX Rampage: 2021 Highlights" video so that it appears by default
     const [videoId, setVideoId] = useState("84e96018-4022-434e-80bf-000ce4cd12b8");
 
+    const [video, setVideo] = useState([]);
+
+    const apiKey = "6c48d56b-7328-4baa-8258-e0484f8c987e";
+
+    useEffect(() => {
+        axios
+        .get(`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
+        .then((response) => {
+            setVideo(response.data)
+        });
+    }, [])
+
+
     // Variable that converts the video ID obtained from the videoId state into the index for that video within the video-details.json file
     const videoIndex = (videoDetails.map(video => video.id).indexOf(videoId));
+
 
     return (
         <main>
@@ -61,7 +76,7 @@ function MainVideo() {
                 </div>
                 
                 <VideoList 
-                    videos={videos} 
+                    videos={video} 
                     videoId={videoId} 
                     setVideoId={setVideoId}
                 />
