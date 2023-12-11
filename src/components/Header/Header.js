@@ -6,12 +6,16 @@ import UploadButton from '../UploadButton/UploadButton';
 import brainflixLogo from '../../assets/images/BrainFlix-logo.svg';
 import pfp from '../../assets/images/Mohan-muruge.jpg';
 
+import { Link } from 'react-router-dom'
+
 function Header() {
     return (
         <div className="desktop-container">
             <header className="header">
-                <img className="header__logo" src={brainflixLogo} alt="logo"/>
-                
+                <Link to='/'>
+                    <img className="header__logo" src={brainflixLogo} alt="logo"/>
+                </Link>
+
                 <SearchBar/>
                 
                 <UploadButton/>
