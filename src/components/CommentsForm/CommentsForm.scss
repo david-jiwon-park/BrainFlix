@@ -44,22 +44,10 @@
         }
     }
     &__comment-textarea {
-        outline: none;
-        box-sizing: border-box;
+        @include form-fields;
         height: 6.5rem;
-        width: 100%;
-        background: $color-field-background;
-        border: 1px solid $color-divider-and-outline;
-        border-radius: 4px; 
-        @include field-text;
         resize: none;
         padding: 0.75rem 0 0 0.75rem;
-        &::placeholder {
-            @include field-text;
-        }
-        &:focus {
-            @include field-active-state;
-        }
         @include tablet {
             height: 2.5rem;
             padding: 0.65rem 0 0 1rem;

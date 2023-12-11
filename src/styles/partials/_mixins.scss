@@ -19,6 +19,24 @@
   margin: auto;
 }
 
+/* Common Styling for Form Fields */
+@mixin form-fields {
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  background: $color-field-background;
+  border: 1px solid $color-divider-and-outline;
+  border-radius: 4px; 
+  @include field-text;
+  &::placeholder {
+    @include field-text;
+  }
+  &:focus {
+    @include field-active-state;
+  }
+}
+
+
 /* Mobile Profile Picture Icon Shape */
 @mixin mobile-pfp-shape {
   width: 2.25rem;

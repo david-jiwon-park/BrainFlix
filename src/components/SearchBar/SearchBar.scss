@@ -19,21 +19,9 @@
         padding-right: 1rem;
     }
     &__input {
-        outline: none;
-        box-sizing: border-box;
+        @include form-fields;
         height: 2.5rem;
-        width: 100%;
-        background: $color-field-background;
-        border: 1px solid $color-divider-and-outline;
-        border-radius: 4px; 
         padding-left: 2.5rem;
-        @include field-text;
-        &::placeholder {
-            @include field-text;
-        }
-        &:focus {
-            @include field-active-state;
-        }
     }
     &__icon {
         position: absolute;

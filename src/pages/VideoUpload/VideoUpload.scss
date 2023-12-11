@@ -1,0 +1,66 @@
+// Video Upload Page Styling 
+
+@import '../../styles/partials/variables';
+@import '../../styles/partials/mixins';
+
+.video-upload {
+    @include top-divider;
+    padding: 2rem 1rem;
+    &__heading {
+        padding-bottom: 2rem; 
+    }
+    &__label {
+        @include mobile-field-label;
+    }
+    &__thumbnail {
+        width: 100%;
+        border-radius: 4px;
+        padding: 0.25rem 0 1rem;
+    }
+    &__field-container {
+        padding: 0.25rem 0 1rem;
+    }
+    &__title-textarea {
+        @include form-fields;
+        height: 2.5rem;
+        resize: none;
+        padding: 0.75rem 0 0 0.75rem;
+    }
+    &__description-textarea {
+        @include form-fields;
+        height: 6.5rem;
+        resize: none;
+        padding: 0.75rem 0 0 0.75rem;
+    }
+
+    &__links-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__publish-button-container {
+        width: 100%;
+        position: relative;
+    }
+    &__publish-button {
+        width: 100%;
+        height: 2.5rem;
+        @include button;
+        @include button-text;
+    }
+    &__publish-icon {
+        position: absolute;
+        top: 0.55rem;
+        left: 0.6rem;
+        height: 1.25rem;
+    }
+    &__cancel-link {
+        padding-top: 2rem;
+        text-decoration: none;
+        color: $color-primary-cta;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+    }
+}
