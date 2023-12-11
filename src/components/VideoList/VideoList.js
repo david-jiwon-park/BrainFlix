@@ -3,6 +3,8 @@
 import './VideoList.scss'
 import Video from '../Video/Video';
 
+import { Link } from 'react-router-dom';
+
 function VideoList({videos, videoId, setVideoId}) {
 
     // Function to change the videoId state to the ID of the selected video that is passed through this function
