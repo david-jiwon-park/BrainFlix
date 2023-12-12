@@ -119,6 +119,12 @@
   font-weight: 400;
 }
 
+@mixin mobile-header-text {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
 @mixin mobile-field-label {
   color: $color-text-secondary;
   font-size: 0.75rem;

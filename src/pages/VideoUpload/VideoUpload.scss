@@ -5,17 +5,28 @@
 
 .video-upload {
     @include top-divider;
-    padding: 2rem 1rem;
+    padding: 2.5rem 2.25rem 2.25rem;
     &__heading {
-        padding-bottom: 2rem; 
+        padding-bottom: 1.5rem; 
+        @include mobile-header-text;
+        @include tablet {
+            @include bottom-divider;
+            @include td-header-text;
+        }
     }
     &__label {
         @include mobile-field-label;
+        &--thumbnail {
+            padding-top: 1.5rem;
+        }
     }
     &__thumbnail {
         width: 100%;
         border-radius: 4px;
         padding: 0.25rem 0 1rem;
+        @include tablet {
+            width: 50%;
+        }
     }
     &__field-container {
         padding: 0.25rem 0 1rem;
@@ -37,17 +48,28 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        @include tablet {
+            flex-direction: row-reverse;
+            @include top-divider;
+            padding-top: 1.5rem;
+        }
     }
 
     &__publish-button-container {
         width: 100%;
         position: relative;
+        @include tablet {
+            width: 10rem;
+        }
     }
     &__publish-button {
         width: 100%;
         height: 2.5rem;
         @include button;
         @include button-text;
+        @include tablet {
+            width: 10rem;
+        }
     }
     &__publish-icon {
         position: absolute;
@@ -62,5 +84,9 @@
         font-size: 0.75rem;
         line-height: 1.25rem;
         font-weight: 400;
+        @include tablet {
+            margin-left: auto;
+            padding: 0 4rem 0 0;
+        }
     }
 }

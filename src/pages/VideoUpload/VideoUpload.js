@@ -8,7 +8,7 @@ function VideoUpload() {
     return (
         <div className='video-upload'>
             <h1 className='video-upload__heading'>Upload Video</h1>
-            <h4 className='video-upload__label'>VIDEO THUMBNAIL</h4>
+            <h4 className='video-upload__label video-upload__label--thumbnail'>VIDEO THUMBNAIL</h4>
             <img className='video-upload__thumbnail' src={thumbnail} alt='thumbnail'/>
 
             <form>
@@ -27,8 +27,8 @@ function VideoUpload() {
                 <div className="video-upload__field-container">
                     <textarea 
                         className="video-upload__description-textarea" 
-                        name="title" 
-                        id="title" 
+                        name="description" 
+                        id="description" 
                         placeholder="Add a description to your video" 
                         required>
                     </textarea>
@@ -43,7 +43,7 @@ function VideoUpload() {
                     </div>
 
                     <Link className="video-upload__cancel-link" to="/">
-                        <h4>CANCEL</h4>
+                        <h4 className="video-upload__cancel-text">CANCEL</h4>
                     </Link>
                 </div>
             </form> 
