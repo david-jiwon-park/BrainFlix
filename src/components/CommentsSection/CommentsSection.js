@@ -8,7 +8,7 @@ function CommentsSection({comments, formatDate}) {
 
     return (
         <section className="comments-section">
-            <h5>{comments.length} {`${comments.length === 1 ? `Comment` : `Comments`}`}</h5>
+            <h5>Comments</h5>
             
             <CommentsForm/>
             

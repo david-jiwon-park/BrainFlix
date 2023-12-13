@@ -5,19 +5,15 @@ import Video from '../Video/Video';
 
 import { Link } from 'react-router-dom';
 
-function VideoList({videos, videoId, setVideoId}) {
+function VideoList({videoList, videoId}) {
 
-    // Function to change the videoId state to the ID of the selected video that is passed through this function
-    function handleVideoSelect(selectedVideo) {
-        setVideoId(selectedVideo);
-    };
 
     return (
         <section className="video-list">
             <h4 className="video-list__heading">NEXT VIDEOS</h4>
 
             {/* Filtering out the selected video from the videos list, and then mapping the remaining videos */}
-            {videos.filter((video) => {
+            {videoList.filter((video) => {
                 return video.id !== videoId;
             })
             .map((video) => (
@@ -27,7 +23,6 @@ function VideoList({videos, videoId, setVideoId}) {
                     title={video.title}
                     channel={video.channel}
                     image={video.image}
-                    handleVideoSelect={handleVideoSelect}
                 />
             ))}
 
