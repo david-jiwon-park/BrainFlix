@@ -17,13 +17,15 @@ function VideoList({videoList, videoId}) {
                 return video.id !== videoId;
             })
             .map((video) => (
-                <Video 
-                    key={video.id}
-                    id={video.id}
-                    title={video.title}
-                    channel={video.channel}
-                    image={video.image}
-                />
+                <Link className="video-list__links" key={video.id} to={`/${video.id}`}>
+                    <Video 
+                        key={video.id}
+                        id={video.id}
+                        title={video.title}
+                        channel={video.channel}
+                        image={video.image}
+                    />
+                </Link>
             ))}
 
         </section>

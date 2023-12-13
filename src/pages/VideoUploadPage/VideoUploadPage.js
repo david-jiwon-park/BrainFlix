@@ -1,9 +1,9 @@
-import './VideoUpload.scss';
+import './VideoUploadPage.scss';
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import publishIcon from '../../assets/images/publish.svg';
 import { Link, useNavigate } from 'react-router-dom';
 
-function VideoUpload() {
+function VideoUploadPage() {
 
     const navigate = useNavigate();
 
@@ -68,4 +68,4 @@ function VideoUpload() {
     )
 };
 
-export default VideoUpload;
+export default VideoUploadPage;

@@ -1,8 +1,9 @@
 import Header from './components/Header/Header';
-import MainVideo from './components/MainVideo/MainVideo';
+import HomePage from './pages/HomePage/HomePage';
 import './App.scss';
 
-import VideoUpload from './pages/VideoUpload/VideoUpload';
+import VideoDetailsPage from './pages/VideoDetailsPage/VideoDetailsPage';
+import VideoUploadPage from './pages/VideoUploadPage/VideoUploadPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -11,11 +12,11 @@ function App() {
       <BrowserRouter>
         <Header/>
         <Routes>
-          <Route path="/" element={<MainVideo/>}/>
+          <Route path="/" element={<HomePage/>}/>
 
-          <Route path="/video/:videoId" element={<MainVideo/>}/>
+          <Route path="/:videoId" element={<VideoDetailsPage/>}/>
 
-          <Route path="/videoupload" element={<VideoUpload/>}/>
+          <Route path="/videoupload" element={<VideoUploadPage/>}/>
 
         </Routes>
       </BrowserRouter>

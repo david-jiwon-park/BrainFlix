@@ -1,17 +1,17 @@
 // Component that contains everything in the website that is below the Header
 
-import './MainVideo.scss';
-import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import VideoDetails from "../VideoDetails/VideoDetails";
-import CommentsSection from "../CommentsSection/CommentsSection";
-import VideoList from "../VideoList/VideoList";
+import './HomePage.scss';
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import VideoDetails from "../../components/VideoDetails/VideoDetails";
+import CommentsSection from "../../components/CommentsSection/CommentsSection";
+import VideoList from "../../components/VideoList/VideoList";
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import videoDetails from '../../data/video-details.json';
 
-function MainVideo() {
+function HomePage() {
    
     // Function to format dates into mm/dd/yyyy format
     function formatDate(input) {
@@ -50,7 +50,6 @@ function MainVideo() {
         });
     }, []);
 
-
     useEffect(() => {
         axios
         .get(`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
@@ -58,8 +57,6 @@ function MainVideo() {
             setVideoList(response.data)
         });
     }, []);
-
-    
 
     return (
         <main>
@@ -97,4 +94,4 @@ function MainVideo() {
     );
 }
 
-export default MainVideo;
+export default HomePage;

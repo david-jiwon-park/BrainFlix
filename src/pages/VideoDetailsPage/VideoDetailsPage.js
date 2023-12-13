@@ -1,17 +1,18 @@
 // Component that contains everything in the website that is below the Header
 
-import './MainVideo.scss';
-import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import VideoDetails from "../VideoDetails/VideoDetails";
-import CommentsSection from "../CommentsSection/CommentsSection";
-import VideoList from "../VideoList/VideoList";
+import './VideoDetailsPage.scss';
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import VideoDetails from "../../components/VideoDetails/VideoDetails";
+import CommentsSection from "../../components/CommentsSection/CommentsSection";
+import VideoList from "../../components/VideoList/VideoList";
 
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import videoDetails from '../../data/video-details.json';
 
-function MainVideo() {
+function VideoDetailsPage() {
    
     // Function to format dates into mm/dd/yyyy format
     function formatDate(input) {
@@ -31,8 +32,9 @@ function MainVideo() {
         return mm + '/' + dd + '/' + yyyy;
     };
 
-    // React State for video ID of selected video, starting Video ID is for the "BMX Rampage: 2021 Highlights" video so that it appears by default
-    const defaultVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
+
+    const { videoId } = useParams();
+    console.log(videoId);
 
 
 
@@ -44,11 +46,11 @@ function MainVideo() {
 
     useEffect(() => {
         axios
-        .get(`https://project-2-api.herokuapp.com/videos/${defaultVideoId}?api_key=${apiKey}`)
+        .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`)
         .then((response) => {
             setCurrentVideo(response.data);
         });
-    }, []);
+    }, [videoId]);
 
 
     useEffect(() => {
@@ -57,10 +59,9 @@ function MainVideo() {
         .then((response) => {
             setVideoList(response.data)
         });
-    }, []);
+    }, [videoId]);
 
     
-
     return (
         <main>
             
@@ -88,7 +89,7 @@ function MainVideo() {
                 
                 <VideoList 
                     videoList={videoList} 
-                    videoId={defaultVideoId} 
+                    videoId={videoId} 
                 />
 
             </div>
@@ -97,4 +98,4 @@ function MainVideo() {
     );
 }
 
-export default MainVideo;
+export default VideoDetailsPage;
