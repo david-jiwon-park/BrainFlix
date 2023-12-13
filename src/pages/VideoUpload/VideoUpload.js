@@ -1,16 +1,24 @@
 import './VideoUpload.scss';
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import publishIcon from '../../assets/images/publish.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function VideoUpload() {
+
+    const navigate = useNavigate();
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        alert("Your video has been uploaded!");
+        navigate('/');
+    }
 
     return (
         <div className='video-upload'>
             <div className="video-upload__desktop-container">
                 <h1 className='video-upload__heading'>Upload Video</h1>
                 
-                <form>
+                <form onSubmit={handleFormSubmit}>
                     <div className="video-upload__desktop-fields-container">
                         
                         <div className="video-upload__thumbnail-container"> 
@@ -44,8 +52,8 @@ function VideoUpload() {
 
                     <div className="video-upload__links-container">
                         <div className="video-upload__publish-button-container">
-                            <button id="publish-button" className="video-upload__publish-button">
-                                PUBLISH
+                            <button type="submit" id="publish-button" className="video-upload__publish-button">
+                                    PUBLISH
                             </button>
                             <img className="video-upload__publish-icon" src={publishIcon} alt="publish icon"/>
                         </div>
