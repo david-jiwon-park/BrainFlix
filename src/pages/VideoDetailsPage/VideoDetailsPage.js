@@ -32,11 +32,8 @@ function VideoDetailsPage({videoList, apiKey}) {
 
 
     const { videoId } = useParams();
-    console.log(videoId);
-
 
     const [currentVideo, setCurrentVideo] = useState({});
-
 
     useEffect(() => {
         axios
