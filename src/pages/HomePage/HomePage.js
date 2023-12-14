@@ -9,9 +9,7 @@ import VideoList from "../../components/VideoList/VideoList";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import videoDetails from '../../data/video-details.json';
-
-function HomePage() {
+function HomePage({videoList, apiKey}) {
    
     // Function to format dates into mm/dd/yyyy format
     function formatDate(input) {
@@ -31,66 +29,59 @@ function HomePage() {
         return mm + '/' + dd + '/' + yyyy;
     };
 
-    // React State for video ID of selected video, starting Video ID is for the "BMX Rampage: 2021 Highlights" video so that it appears by default
-    const defaultVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
+    const videoId = videoList[0]?.id
 
+    const [currentVideo, setCurrentVideo] = useState({});
 
-
-    const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
-
-    const [videoList, setVideoList] = useState([]);
-
-    const apiKey = "6c48d56b-7328-4baa-8258-e0484f8c987e";
 
     useEffect(() => {
+        if (!videoId) {
+            return;
+        }
         axios
-        .get(`https://project-2-api.herokuapp.com/videos/${defaultVideoId}?api_key=${apiKey}`)
+        .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`)
         .then((response) => {
             setCurrentVideo(response.data);
         });
-    }, []);
-
-    useEffect(() => {
-        axios
-        .get(`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
-        .then((response) => {
-            setVideoList(response.data)
-        });
-    }, []);
+    }, [videoId, apiKey]);
 
     return (
-        <main>
-            
-            <VideoPlayer videoPoster={currentVideo.image}/>
-            
-            <div className="desktop-container">
-                <div className="desktop-container__video-details-comments">
+        <>
+        {currentVideo ? 
+            (<main>
+                
+                <VideoPlayer videoPoster={currentVideo.image}/>
+                
+                <div className="desktop-container">
+                    <div className="desktop-container__video-details-comments">
+                        
+                        <VideoDetails 
+                            title={currentVideo.title}
+                            channel={currentVideo.channel}
+                            timestamp={currentVideo.timestamp}
+                            views={currentVideo.views}
+                            likes={currentVideo.likes}
+                            description={currentVideo.description}
+                            formatDate={formatDate}
+                        />
+                        
+                        <CommentsSection 
+                            comments={currentVideo.comments}
+                            formatDate={formatDate}
+                        />
+
+                    </div>
                     
-                    <VideoDetails 
-                        title={currentVideo.title}
-                        channel={currentVideo.channel}
-                        timestamp={currentVideo.timestamp}
-                        views={currentVideo.views}
-                        likes={currentVideo.likes}
-                        description={currentVideo.description}
-                        formatDate={formatDate}
-                    />
-                    
-                    <CommentsSection 
-                        comments={currentVideo.comments}
-                        formatDate={formatDate}
+                    <VideoList 
+                        videoList={videoList} 
+                        videoId={videoId} 
                     />
 
                 </div>
                 
-                <VideoList 
-                    videoList={videoList} 
-                    videoId={defaultVideoId} 
-                />
-
-            </div>
-            
-        </main>
+            </main>)
+        : null}
+    </>
     );
 }
 

@@ -17,7 +17,7 @@ function VideoList({videoList, videoId}) {
                 return video.id !== videoId;
             })
             .map((video) => (
-                <Link className="video-list__links" key={video.id} to={`/${video.id}`}>
+                <Link className="video-list__links" key={video.id} to={`/video/${video.id}`}>
                     <Video 
                         key={video.id}
                         id={video.id}

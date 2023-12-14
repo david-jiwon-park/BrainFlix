@@ -10,9 +10,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import videoDetails from '../../data/video-details.json';
-
-function VideoDetailsPage() {
+function VideoDetailsPage({videoList, apiKey}) {
    
     // Function to format dates into mm/dd/yyyy format
     function formatDate(input) {
@@ -37,12 +35,8 @@ function VideoDetailsPage() {
     console.log(videoId);
 
 
+    const [currentVideo, setCurrentVideo] = useState({});
 
-    const [currentVideo, setCurrentVideo] = useState(videoDetails[0]);
-
-    const [videoList, setVideoList] = useState([]);
-
-    const apiKey = "6c48d56b-7328-4baa-8258-e0484f8c987e";
 
     useEffect(() => {
         axios
@@ -50,51 +44,46 @@ function VideoDetailsPage() {
         .then((response) => {
             setCurrentVideo(response.data);
         });
-    }, [videoId]);
-
-
-    useEffect(() => {
-        axios
-        .get(`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
-        .then((response) => {
-            setVideoList(response.data)
-        });
-    }, [videoId]);
+    }, [videoId, apiKey]);
 
     
     return (
-        <main>
-            
-            <VideoPlayer videoPoster={currentVideo.image}/>
-            
-            <div className="desktop-container">
-                <div className="desktop-container__video-details-comments">
+        <>
+        {currentVideo ? 
+            <main>
+                
+                <VideoPlayer videoPoster={currentVideo.image}/>
+                
+                <div className="desktop-container">
+                    <div className="desktop-container__video-details-comments">
+                        
+                        <VideoDetails 
+                            title={currentVideo.title}
+                            channel={currentVideo.channel}
+                            timestamp={currentVideo.timestamp}
+                            views={currentVideo.views}
+                            likes={currentVideo.likes}
+                            description={currentVideo.description}
+                            formatDate={formatDate}
+                        />
+                        
+                        <CommentsSection 
+                            comments={currentVideo.comments}
+                            formatDate={formatDate}
+                        />
+
+                    </div>
                     
-                    <VideoDetails 
-                        title={currentVideo.title}
-                        channel={currentVideo.channel}
-                        timestamp={currentVideo.timestamp}
-                        views={currentVideo.views}
-                        likes={currentVideo.likes}
-                        description={currentVideo.description}
-                        formatDate={formatDate}
-                    />
-                    
-                    <CommentsSection 
-                        comments={currentVideo.comments}
-                        formatDate={formatDate}
+                    <VideoList 
+                        videoList={videoList} 
+                        videoId={videoId} 
                     />
 
                 </div>
                 
-                <VideoList 
-                    videoList={videoList} 
-                    videoId={videoId} 
-                />
-
-            </div>
-            
-        </main>
+            </main>
+        : null}
+        </>
     );
 }
 
