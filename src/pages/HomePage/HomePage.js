@@ -7,6 +7,7 @@ import CommentsSection from "../../components/CommentsSection/CommentsSection";
 import VideoList from "../../components/VideoList/VideoList";
 
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function HomePage({videoList, apiKey}) {
@@ -29,7 +30,14 @@ function HomePage({videoList, apiKey}) {
         return mm + '/' + dd + '/' + yyyy;
     };
 
-    const videoId = videoList[0]?.id
+
+    const defaultVideoId = videoList[0]?.id
+
+    
+    const params = useParams();
+
+    const videoId = params.videoId ? params.videoId : defaultVideoId;
+
 
     const [currentVideo, setCurrentVideo] = useState({});
 
@@ -43,13 +51,12 @@ function HomePage({videoList, apiKey}) {
         .then((response) => {
             setCurrentVideo(response.data);
         });
-    }, [videoId, apiKey]);
+    }, [videoId]);
 
     return (
         <>
         {currentVideo ? 
-            (<main>
-                
+            (<>
                 <VideoPlayer videoPoster={currentVideo.image}/>
                 
                 <div className="desktop-container">
@@ -69,7 +76,6 @@ function HomePage({videoList, apiKey}) {
                             comments={currentVideo.comments}
                             formatDate={formatDate}
                         />
-
                     </div>
                     
                     <VideoList 
@@ -78,8 +84,7 @@ function HomePage({videoList, apiKey}) {
                     />
 
                 </div>
-                
-            </main>)
+            </>)
         : null}
     </>
     );
