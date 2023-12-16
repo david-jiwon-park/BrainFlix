@@ -50,6 +50,7 @@ function HomePage({videoList, apiKey}) {
         .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`)
         .then((response) => {
             setCurrentVideo(response.data);
+            window.scrollTo(0, 0);
         });
     }, [videoId]);
 
