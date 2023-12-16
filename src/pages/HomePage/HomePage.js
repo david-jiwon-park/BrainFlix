@@ -51,6 +51,9 @@ function HomePage({videoList, apiKey}) {
         .then((response) => {
             setCurrentVideo(response.data);
             window.scrollTo(0, 0);
+        })
+        .catch((error) => {
+            console.log(error);
         });
     }, [videoId]);
 

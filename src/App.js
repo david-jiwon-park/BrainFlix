@@ -20,7 +20,10 @@ function App() {
     .get(`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
     .then((response) => {
       setVideoList(response.data)
-    });
+    })
+    .catch((error) => {
+      console.log(error);
+    });;
   }, []);
 
   return (
