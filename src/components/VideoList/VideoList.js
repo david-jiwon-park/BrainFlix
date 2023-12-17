@@ -6,8 +6,6 @@ import Video from '../Video/Video';
 import { Link } from 'react-router-dom';
 
 function VideoList({videoList, videoId}) {
-
-
     return (
         <section className="video-list">
             <h4 className="video-list__heading">NEXT VIDEOS</h4>

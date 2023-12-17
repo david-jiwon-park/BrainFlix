@@ -3,8 +3,6 @@
 import './Video.scss'
 
 function Video(props) {
-    
-
     return (
         <article className="video">
             <img className="video__image" src={props.image} alt="thumbnail"/>
@@ -16,8 +14,5 @@ function Video(props) {
 
     );
 }
-
-
-
 
 export default Video;

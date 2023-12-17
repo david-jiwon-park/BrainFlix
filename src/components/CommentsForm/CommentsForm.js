@@ -5,7 +5,6 @@ import pfp from '../../assets/images/Mohan-muruge.jpg';
 import commentIcon from '../../assets/images/add_comment.svg';
 
 function CommentsForm() {
-
     return (
         <form id="comment-form" className="comments-form">
             <img className="comments-form__pfp" src={pfp} alt="profile icon"/>
