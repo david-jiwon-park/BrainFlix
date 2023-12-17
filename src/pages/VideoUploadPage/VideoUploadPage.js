@@ -1,3 +1,5 @@
+// Page Component for Video Upload Page
+
 import './VideoUploadPage.scss';
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import publishIcon from '../../assets/images/publish.svg';
