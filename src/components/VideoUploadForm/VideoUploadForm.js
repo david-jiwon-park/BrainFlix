@@ -1,6 +1,4 @@
 import './VideoUploadForm.scss';
-import thumbnail from '../../assets/images/Upload-video-preview.jpg';
-import publishIcon from '../../assets/images/publish.svg';
 import { Link, useNavigate } from 'react-router-dom';
 
 function VideoUploadForm() {
@@ -20,7 +18,7 @@ function VideoUploadForm() {
                 
                 <div className="video-upload-form__thumbnail-container"> 
                     <h4 className='video-upload-form__label-thumbnail'>VIDEO THUMBNAIL</h4>
-                    <img className='video-upload-form__thumbnail' src={thumbnail} alt='thumbnail'/>
+                    <img className='video-upload-form__thumbnail' src="http://localhost:8080/images/Upload-video-preview.jpg" alt='thumbnail'/>
                 </div>
                 
                 <div className="video-upload-form__textarea-fields-container">
@@ -52,7 +50,7 @@ function VideoUploadForm() {
                     <button type="submit" id="publish-button" className="video-upload-form__publish-button">
                             PUBLISH
                     </button>
-                    <img className="video-upload-form__publish-icon" src={publishIcon} alt="publish icon"/>
+                    <img className="video-upload-form__publish-icon" src="http://localhost:8080/images/publish.svg" alt="publish icon"/>
                 </div>
 
                 <Link className="video-upload-form__cancel-link" to="/">

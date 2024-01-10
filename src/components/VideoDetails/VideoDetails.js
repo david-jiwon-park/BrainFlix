@@ -1,9 +1,6 @@
 // Component that contains all relevant details for the selected video
 
 import './VideoDetails.scss';
-import viewsIcon from '../../assets/images/views.svg';
-import likesIcon from '../../assets/images/likes.svg';
-
 
 function VideoDetails(props) {
 
@@ -21,11 +18,11 @@ function VideoDetails(props) {
                 </div>
                 <div className="video-details__data--right"> 
                     <div className="video-details__views">
-                        <img className="video-details__icon" src={viewsIcon} alt="views icon"/>
+                        <img className="video-details__icon" src="http://localhost:8080/images/views.svg" alt="views icon"/>
                         <h5 className="video-details__data-text">{props.views}</h5>
                     </div>
                     <div className="video-details__likes">
-                        <img className="video-details__icon" src={likesIcon} alt="likes icon"/>
+                        <img className="video-details__icon" src="http://localhost:8080/images/likes.svg" alt="likes icon"/>
                         <h5 className="video-details__data-text">{props.likes}</h5>
                     </div>
                 </div>

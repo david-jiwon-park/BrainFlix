@@ -1,7 +1,6 @@
 // Component for Upload Button in Header
 
 import './UploadButton.scss';
-import uploadIcon from '../../assets/images/upload.svg';
 
 import { Link } from 'react-router-dom';
 
@@ -12,7 +11,7 @@ function UploadButton() {
                 <button id="upload-button" className="upload-button__button">
                     UPLOAD
                 </button>
-                <img className="upload-button__icon" src={uploadIcon} alt="upload icon"/>
+                <img className="upload-button__icon" src="http://localhost:8080/images/upload.svg" alt="upload icon"/>
             </Link>
         </div>
     );

@@ -1,13 +1,11 @@
 // Component for Comments Form where comments are to be submitted
 
 import './CommentsForm.scss';
-import pfp from '../../assets/images/Mohan-muruge.jpg';
-import commentIcon from '../../assets/images/add_comment.svg';
 
 function CommentsForm() {
     return (
         <form id="comment-form" className="comments-form">
-            <img className="comments-form__pfp" src={pfp} alt="profile icon"/>
+            <img className="comments-form__pfp" src="http://localhost:8080/images/Mohan-muruge.jpg" alt="profile icon"/>
                 
             <div className="comments-form__user-input">
                 
@@ -24,7 +22,7 @@ function CommentsForm() {
                     <button id="comment-button" className="comments-form__button" type="submit">
                         COMMENT
                     </button>
-                    <img className="comments-form__comment-icon" src={commentIcon} alt="comment icon"/>
+                    <img className="comments-form__comment-icon" src="http://localhost:8080/images/add_comment.svg" alt="comment icon"/>
                 </div>
             </div>
         </form>
