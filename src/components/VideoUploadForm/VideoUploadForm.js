@@ -1,19 +1,32 @@
 import './VideoUploadForm.scss';
 import { Link, useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
+import axios from 'axios';
 
 function VideoUploadForm() {
-
     const navigate = useNavigate();
+    const formRef = useRef();
 
-    // Creating submit handler that confirms submission and navigates user to home page upon successful submission
+    // Creating submit handler that posts video to API, confirms submission, and navigates user to home page upon successful submission
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        alert("Your video has been uploaded!");
-        navigate('/');
-    }
-
+        axios
+        .post(`http://localhost:8080/videos`, {
+            title: formRef.current.title.value, 
+            description: formRef.current.description.value, 
+        })
+        .then((response) => {
+            alert("Your video has been uploaded!");
+            navigate('/');
+        })
+        .catch((error) => {
+            console.log(error);
+            alert("There was an issue with uploading your video. Please try uploading the video again later.");
+        })
+    };
+        
     return (  
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} ref={formRef}>
             <div className="video-upload-form__desktop-fields-container">
                 
                 <div className="video-upload-form__thumbnail-container"> 
@@ -47,9 +60,7 @@ function VideoUploadForm() {
 
             <div className="video-upload-form__links-container">
                 <div className="video-upload-form__publish-button-container">
-                    <button type="submit" id="publish-button" className="video-upload-form__publish-button">
-                            PUBLISH
-                    </button>
+                    <button type="submit" id="publish-button" className="video-upload-form__publish-button">PUBLISH</button>
                     <img className="video-upload-form__publish-icon" src="http://localhost:8080/images/publish.svg" alt="publish icon"/>
                 </div>
 
