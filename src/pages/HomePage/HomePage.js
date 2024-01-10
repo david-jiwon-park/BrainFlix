@@ -30,15 +30,13 @@ function HomePage() {
         return mm + '/' + dd + '/' + yyyy;
 	};
 
-    const apiKey = "6c48d56b-7328-4baa-8258-e0484f8c987e";
-
     // Creating state that will store the video list
     const [videoList, setVideoList] = useState([]);
 
     // Making an API get request to retrieve video list from the API, and storing it in the videoList state
 	useEffect(() => {
 		axios
-        .get(`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
+        .get(`http://localhost:8080/videos`)
         .then((response) => {
 			setVideoList(response.data)
 		})
@@ -64,7 +62,7 @@ function HomePage() {
 			return;
 		}
 		axios
-        .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=${apiKey}`)
+        .get(`http://localhost:8080/videos/${videoId}`)
         .then((response) => {
             setCurrentVideo(response.data);
             window.scrollTo(0, 0);
