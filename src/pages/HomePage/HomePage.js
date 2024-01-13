@@ -53,26 +53,29 @@ function HomePage() {
         });
 	}, [videoId]);
 
+    // Destructuring the object from the currentVideo state 
+    const { image, title, channel, timestamp, views, likes, description, comments } = currentVideo;
+
     return (
         <>
             {currentVideo ? 
             (<>
-                <VideoPlayer videoPoster={currentVideo.image}/>
+                <VideoPlayer videoPoster={image}/>
                     
                 <div className="desktop-container">
                     <div className="desktop-container__video-details-comments">
                                 
                         <VideoDetails 
-                            title={currentVideo.title}
-                            channel={currentVideo.channel}
-                            timestamp={currentVideo.timestamp}
-                            views={currentVideo.views}
-                            likes={currentVideo.likes}
-                            description={currentVideo.description}
+                            title={title}
+                            channel={channel}
+                            timestamp={timestamp}
+                            views={views}
+                            likes={likes}
+                            description={description}
                         />
                                 
                         <CommentsSection 
-                            comments={currentVideo.comments}
+                            comments={comments}
                         />
                         
                     </div>
