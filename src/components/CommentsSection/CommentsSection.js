@@ -4,7 +4,7 @@ import './CommentsSection.scss';
 import CommentsForm from "../CommentsForm/CommentsForm"
 import Comments from "../Comments/Comments";
 
-function CommentsSection({comments, formatDate}) {
+function CommentsSection({comments}) {
     return (
         <section className="comments-section">
             <h5>{comments?.length} {comments?.length === 1 ? "Comment" : "Comments"}</h5>
@@ -20,7 +20,6 @@ function CommentsSection({comments, formatDate}) {
                         name={comment.name}
                         comment={comment.comment}
                         timestamp={comment.timestamp}
-                        formatDate={formatDate}
                     /> 
                 ))}
                 

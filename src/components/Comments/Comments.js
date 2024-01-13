@@ -1,11 +1,12 @@
 // Component for each comment from the selected video that is mapped
 
 import './Comments.scss';
+import formatDate from "../../utilities/utilities";
 
 function Comments(props) {
     
     // Using the formatDate function passed as a prop to convert the comment timestamp to mm/dd/yyyy
-    const formattedDate = props.formatDate(props);
+    const formattedDate = formatDate(props);
 
     return (
         <article className="comments">

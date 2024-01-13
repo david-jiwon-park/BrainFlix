@@ -5,31 +5,12 @@ import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import CommentsSection from "../../components/CommentsSection/CommentsSection";
 import VideoList from "../../components/VideoList/VideoList";
-
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 function HomePage() {
    
-	// Function to format dates into mm/dd/yyyy format
-	function formatDate(input) {
-        const timestamp = new Date(input.timestamp); 
-        const yyyy = timestamp.getFullYear();
-        let mm = timestamp.getMonth() + 1; 
-        let dd = timestamp.getDate();
-        
-        if (mm < 10) {
-                mm = '0' + mm
-        };
-        
-        if (dd < 10) {
-                dd = '0' + dd
-        };
-        
-        return mm + '/' + dd + '/' + yyyy;
-	};
-
     // Creating state that will store the video list
     const [videoList, setVideoList] = useState([]);
 
@@ -41,7 +22,7 @@ function HomePage() {
 			setVideoList(response.data)
 		})
         .catch((error) => {
-            console.log(error);
+            console.log("Failed to retrieve the video list");
         });
     }, []);
 
@@ -68,7 +49,7 @@ function HomePage() {
             window.scrollTo(0, 0);
         })
         .catch((error) => {
-            console.log(error);
+            console.log("Failed to retrieve this video ID");
         });
 	}, [videoId]);
 
@@ -88,12 +69,10 @@ function HomePage() {
                             views={currentVideo.views}
                             likes={currentVideo.likes}
                             description={currentVideo.description}
-                            formatDate={formatDate}
                         />
                                 
                         <CommentsSection 
                             comments={currentVideo.comments}
-                            formatDate={formatDate}
                         />
                         
                     </div>

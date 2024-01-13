@@ -1,11 +1,12 @@
 // Component that contains all relevant details for the selected video
 
 import './VideoDetails.scss';
+import formatDate from "../../utilities/utilities";
 
 function VideoDetails(props) {
 
     // Using the formatDate function passed as a prop to convert the video timestamp to mm/dd/yyyy
-    const formattedDate = props.formatDate(props);
+    const formattedDate = formatDate(props);
 
     return (
         <section className="video-details">
