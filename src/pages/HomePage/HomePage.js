@@ -11,13 +11,16 @@ import axios from 'axios';
 
 function HomePage() {
    
+    // Base URL for API Calls
+    const baseURL = 'http://localhost:8080'; 
+
     // Creating state that will store the video list
     const [videoList, setVideoList] = useState([]);
 
     // Making an API get request to retrieve video list from the API, and storing it in the videoList state
 	useEffect(() => {
 		axios
-        .get(`http://localhost:8080/videos`)
+        .get(`${baseURL}/videos`)
         .then((response) => {
 			setVideoList(response.data)
 		})
@@ -43,7 +46,7 @@ function HomePage() {
 			return;
 		}
 		axios
-        .get(`http://localhost:8080/videos/${videoId}`)
+        .get(`${baseURL}/videos/${videoId}`)
         .then((response) => {
             setCurrentVideo(response.data);
             window.scrollTo(0, 0);
