@@ -2,6 +2,7 @@ import './VideoUploadForm.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
 import axios from 'axios';
+import { apiBaseURL } from "../../utilities/utilities";
 
 function VideoUploadForm() {
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ function VideoUploadForm() {
     const handleFormSubmit = (event) => {
         event.preventDefault();
         axios
-        .post(`http://localhost:8080/videos`, {
+        .post(`${apiBaseURL}/videos`, {
             title: formRef.current.title.value, 
             description: formRef.current.description.value, 
         })
@@ -31,7 +32,7 @@ function VideoUploadForm() {
                 
                 <div className="video-upload-form__thumbnail-container"> 
                     <h4 className='video-upload-form__label-thumbnail'>VIDEO THUMBNAIL</h4>
-                    <img className='video-upload-form__thumbnail' src="http://localhost:8080/images/Upload-video-preview.jpg" alt='thumbnail'/>
+                    <img className='video-upload-form__thumbnail' src={`${apiBaseURL}/images/Upload-video-preview.jpg`} alt='thumbnail'/>
                 </div>
                 
                 <div className="video-upload-form__textarea-fields-container">
@@ -61,7 +62,7 @@ function VideoUploadForm() {
             <div className="video-upload-form__links-container">
                 <div className="video-upload-form__publish-button-container">
                     <button type="submit" id="publish-button" className="video-upload-form__publish-button">PUBLISH</button>
-                    <img className="video-upload-form__publish-icon" src="http://localhost:8080/images/publish.svg" alt="publish icon"/>
+                    <img className="video-upload-form__publish-icon" src={`${apiBaseURL}/images/publish.svg`} alt="publish icon"/>
                 </div>
 
                 <Link className="video-upload-form__cancel-link" to="/">

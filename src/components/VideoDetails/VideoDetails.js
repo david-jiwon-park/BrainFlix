@@ -1,7 +1,8 @@
 // Component that contains all relevant details for the selected video
 
 import './VideoDetails.scss';
-import formatDate from "../../utilities/utilities";
+import { formatDate } from "../../utilities/utilities";
+import { apiBaseURL } from "../../utilities/utilities";
 
 function VideoDetails(props) {
 
@@ -19,11 +20,11 @@ function VideoDetails(props) {
                 </div>
                 <div className="video-details__data--right"> 
                     <div className="video-details__views">
-                        <img className="video-details__icon" src="http://localhost:8080/images/views.svg" alt="views icon"/>
+                        <img className="video-details__icon" src={`${apiBaseURL}/images/views.svg`} alt="views icon"/>
                         <h5 className="video-details__data-text">{props.views}</h5>
                     </div>
                     <div className="video-details__likes">
-                        <img className="video-details__icon" src="http://localhost:8080/images/likes.svg" alt="likes icon"/>
+                        <img className="video-details__icon" src={`${apiBaseURL}/images/likes.svg`} alt="likes icon"/>
                         <h5 className="video-details__data-text">{props.likes}</h5>
                     </div>
                 </div>

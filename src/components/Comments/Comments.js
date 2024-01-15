@@ -1,7 +1,7 @@
 // Component for each comment from the selected video that is mapped
 
 import './Comments.scss';
-import formatDate from "../../utilities/utilities";
+import { formatDate } from "../../utilities/utilities";
 
 function Comments(props) {
     

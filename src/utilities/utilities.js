@@ -1,7 +1,7 @@
-// Utilities file for reusable functions
+// Utilities file for reusable functions and variables
 
 // Function to format dates into mm/dd/yyyy format
-const formatDate = (input) => {
+export const formatDate = (input) => {
     const timestamp = new Date(input.timestamp); 
     const yyyy = timestamp.getFullYear();
     let mm = timestamp.getMonth() + 1; 
@@ -18,4 +18,5 @@ const formatDate = (input) => {
     return mm + '/' + dd + '/' + yyyy;
 };
 
-export default formatDate;
+// Variable for base URL of API
+export const apiBaseURL = 'http://localhost:8080';
