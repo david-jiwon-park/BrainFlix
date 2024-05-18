@@ -19,4 +19,4 @@ export const formatDate = (input) => {
 };
 
 // Variable for base URL of API
-export const apiBaseURL = 'http://localhost:8080';
+export const apiBaseURL = process.env.REACT_APP_SERVER;
